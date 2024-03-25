@@ -1,6 +1,6 @@
 function drawCircle() {
     radius=50;
-    const c = document.getElementById("myCanvas");
+    const c = document.getElementById("canvas");
     const ctx = c.getContext("2d");
     ctx.clearRect(0,0,500,350);
     ctx.beginPath();
@@ -25,6 +25,14 @@ function drawCircle() {
     });
 }
 
-function clickCircle(clickX, clickY, xCircle, yCircle, radius) {
-    return Math.sqrt((clickX - xCircle) ** 2 + (clickY - yCircle) ** 2) < radius;
+function clickCircle(xClick, yClick, xCircle, yCircle, radius) {
+    if (Math.sqrt((xClick - xCircle) ** 2 + (yClick - yCircle) ** 2) < radius) {
+        return true;
+        nextRound();
+    };
+    
+}
+
+function nextRound() {
+
 }

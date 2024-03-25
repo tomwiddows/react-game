@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>React! Game</title>
-    <style src="assets/csss/style.css"></style>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <h1>R E A C T !</h1>
-    </div>
-    <div>
+    <header>
+        <h1>R E A C T !</h1><br>
         <button onclick="drawCircle();">play</button>
-        <canvas id="myCanvas" width="500" height="350" style="border:1px solid grey"></canvas>
+    </header>
+    <div id="canvasContainer">
+        <canvas id="canvas" width="500" height="350" style="border:1px solid grey"></canvas>
 
     </div>
     <script src="assets/js/script.js"></script>
