@@ -1,39 +1,42 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Website Goals
 
-Welcome,
+## Customer Goals
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+- Have fun playing a competitive game
+- Be provided instructions on how to play
+- Play solo or with multiple players, on a turn-by-turn basis
+- Input names of players and record scores separately under each name
+- Have minimal number of clicks before game starts and between games
+- Continue to be challenged further to increase joy and reward
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+## Business Goals
 
-## Codeanywhere Reminders
+- Create a fun and easy-to-play game
+- Use bright colours and large block text to emulate retro style arcade games
+- Make game more difficult over time to maximise user retention
+-
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+# User Experience
 
-`python3 -m http.server`
+## Potential Users
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+- People looking for simple fun games on the internet
+- People trying to improve their reaction time
+- People studying JavaScript who want to learn from this code
+- Groups of friends/family that like competing against each other
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+## User Stories
 
-`http_server`
+__New/Returning User__
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+- I want to know what the site is about
+- I want the site navigation to be intuitive and quick
+- I want to have fun
+- I want to know who wins and/or my score
+- I want the site to look fun
+- 
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+__Site Administrator__
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+- The page should be easily manageable
+- The code should be well commented

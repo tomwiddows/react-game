@@ -1,12 +1,16 @@
 body {
     background-color: orange;
+    text-align: center;
 }
 
 #canvasContainer {
     text-align: center;
 }
-#canvas {
+
+canvas {
     background-color: skyblue;
+    width: 350px;
+    height: 450px;
 }
 
 header {
@@ -15,4 +19,3 @@ header {
     font-weight: 400;
     font-style: normal;
 }
-  
