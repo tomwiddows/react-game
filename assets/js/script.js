@@ -1,5 +1,17 @@
 var round = 0;
 
+function resizeCanvas() {
+    const canvas = document.getElementById('canvas');
+    const container = document.getElementById('canvas_container');
+    canvas.width = container.clientWidth;
+    canvas.height = container.clientHeight;
+    console.log(canvas.width, canvas.height);
+}
+
+resizeCanvas();
+
+window.addEventListener('resize', resizeCanvas);
+
 function playGame() {
     var startTime = Date.now();
     nextRound(startTime);
@@ -31,8 +43,6 @@ function drawCircle(startTime) {
     ctx.fillStyle = "green";
     ctx.fill();
 
-    let clicked = false;
-    
     c.addEventListener('click', function handleClick(e) {
         var rect = e.target.getBoundingClientRect();
         const clickPos = {
@@ -50,7 +60,6 @@ function drawCircle(startTime) {
                 console.log("Game Over"); // Output "Game Over" after one minute
             }
         } else {
-            clicked = false;
             console.log('circle not clicked');
         };
     });
