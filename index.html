@@ -15,11 +15,13 @@
         <h1>R E A C T !</h1><br>
         <button onclick="playGame();">play</button>
     </header>
-    <div id="scoreboard">
-        <p>Score: <span id="score"></span></p>
-    </div>
-    <div id="timer">
-        <p>Time Remaining: <span id="clock"></span></p>
+    <div id="parent">
+        <div id="scoreboard">
+            <p>Score: <span id="score-id">0</span></p>
+        </div>
+        <div id="timer">
+            <p>Time Remaining: <span id="timer-id">30</span></p>
+        </div>
     </div>
     <div id="canvas_container">
         <canvas id="canvas"></canvas>

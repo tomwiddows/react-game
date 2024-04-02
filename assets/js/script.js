@@ -1,4 +1,5 @@
 var score = 0;
+var displayScore = document.getElementById("score-id");
 
 function resizeCanvas() {
     const canvas = document.getElementById('canvas');
@@ -13,20 +14,42 @@ resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
 function playGame() {
-    document.getElementById("score").innerHTML = window.score;
-    var startTime = Date.now();
-    nextRound(startTime);
+    console.log(displayScore);
+    displayScore.innerHTML = score;
+    nextTurn();
+    countdown();
 }
 
-function nextRound(startTime) {
+/** 
+function endGame() {
+    // Display GAME OVER on canvas. post score to leaderboard
+}*/
+
+function countdown() {
+    let timer = document.getElementById("timer-id");
+    var timeLeft = 30;
+
+    var timeDown = setInterval(() => {
+    if(timeLeft == 0) {
+        timer.innerHTML = 'Game Over';
+        clearInterval(timeDown);
+        //endGame();
+    } else {
+        timeLeft--;
+        timer.innerHTML = timeLeft;
+    }
+
+}, 1000);
+}
+
+function nextTurn() {
     const c = document.getElementById("canvas");
     const ctx = c.getContext("2d");
     ctx.clearRect(0,0,c.width,c.height);
-    drawCircle(startTime);
+    drawCircle();
 }
 
-function drawCircle(startTime) {
-    currentScore = window.score;
+function drawCircle() {
     radius=25;
     const c = document.getElementById("canvas");
     const ctx = c.getContext("2d");
@@ -53,13 +76,9 @@ function drawCircle(startTime) {
         if (clickCircle(clickPos.x, clickPos.y, xCentre, yCentre, radius)) {
             console.log('circle clicked');
             canvas.removeEventListener('click', handleClick); // Remove event listener to prevent multiple clicks
-            if (Date.now() - startTime < 30000) {
-                window.score++;
-                document.getElementById("score").innerHTML = window.score;
-                nextRound(startTime); // Start the next round if less than a minute has passed
-            } else {
-                console.log("Game Over"); // Output "Game Over" after one minute
-            }
+            score++;
+            displayScore.innerHTML = score;
+            nextTurn(); // Start the next round if less than a minute has passed
         } else {
             console.log('circle not clicked');
         };
