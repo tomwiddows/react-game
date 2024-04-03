@@ -1,5 +1,6 @@
 var score = 0;
 var displayScore = document.getElementById("score-id");
+var leaderboard = [];
 
 function resizeCanvas() {
     const canvas = document.getElementById('canvas');
@@ -15,15 +16,21 @@ window.addEventListener('resize', resizeCanvas);
 
 function playGame() {
     var playButton = document.getElementById("play-button");
+    var howToPlayButton = document.getElementById("how-to-play-button");
+    var leaderboardButton = document.getElementById("leaderboard-button");
     console.log(displayScore);
     displayScore.innerHTML = score;
     nextTurn();
     countdown();
     playButton.disabled = true;
+    howToPlayButton.disabled = true;
+    leaderboardButton.disabled = true;
 }
 
 function endGame() {
     var playButton = document.getElementById("play-button");
+    var howToPlayButton = document.getElementById("how-to-play-button");
+    var leaderboardButton = document.getElementById("leaderboard-button");
     endGame.called = true;
     const c = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
@@ -32,6 +39,9 @@ function endGame() {
     ctx.fillText("GAME", c.width/2 - 90, c.height/4);
     ctx.fillText("OVER", c.width/2 - 90, c.height/3);
     playButton.disabled = false;
+    howToPlayButton.disabled = false;
+    leaderboardButton.disabled = false;
+    inputName();
 }
 
 function countdown() {
@@ -81,27 +91,23 @@ function drawCircle() {
         };
         console.log("click: (" + clickPos.x + "," + clickPos.y + ")");
         clickCircle(clickPos.x, clickPos.y, xCentre, yCentre, radius);
-        if (endGame.called) {
-            return;
+        if (clickCircle(clickPos.x, clickPos.y, xCentre, yCentre, radius)) {
+            console.log('circle clicked');
+            canvas.removeEventListener('click', handleClick); // Remove event listener to prevent multiple clicks
+            score++;
+            displayScore.innerHTML = score;
+            nextTurn(); // Start the next round if less than a minute has passed
         } else {
-            if (clickCircle(clickPos.x, clickPos.y, xCentre, yCentre, radius)) {
-                console.log('circle clicked');
-                canvas.removeEventListener('click', handleClick); // Remove event listener to prevent multiple clicks
-                score++;
-                displayScore.innerHTML = score;
-                nextTurn(); // Start the next round if less than a minute has passed
-            } else {
-                console.log('circle not clicked');
-            };
-        } 
+            console.log('circle not clicked');
+        };
     });
-};
+}
 
 function clickCircle(xClick, yClick, xCircle, yCircle, radius) {
     distance = Math.sqrt((xClick - xCircle) ** 2 + (yClick - yCircle) ** 2);
     console.log(distance);
     return distance < radius;
-};
+}
 
 function howToPlay() {
     const c = document.getElementById("canvas");
@@ -115,3 +121,29 @@ function howToPlay() {
     setTimeout(() => { ctx.fillText("in 30 seconds!", 5, 92); }, 7500);
 }
 
+function inputName() {
+    let playerName = window.prompt("Enter your name: ");
+    if (playerName !== null && playerName !== "") {
+        leaderboard.push({Name: playerName, Score: score});
+    }
+    console.log(leaderboard);
+    score = 0;
+    return;
+}
+
+function displayLeaderboard() {
+    const c = document.getElementById("canvas");
+    const ctx = c.getContext("2d");
+    ctx.clearRect(0,0,c.width,c.height);
+    ctx.font =  "18px Holtwood One SC";
+    ctx.fillStyle = "green";
+    ctx.fillText("Leaderboard", 5, 23);
+
+    let yOffset = 0;
+    for (let i = 0; i < leaderboard.length; i++) {
+        const entry = leaderboard[i];
+        const text = `${entry.Name}: ${entry.Score}`;
+        ctx.fillText(text, 5, 23 * (i + 2) + yOffset);
+        yOffset += 20; // Increase vertical offset for the next entry
+    }
+}
