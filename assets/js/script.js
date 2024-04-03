@@ -20,10 +20,15 @@ function playGame() {
     countdown();
 }
 
-/** 
 function endGame() {
-    // Display GAME OVER on canvas. post score to leaderboard
-}*/
+    endGame.called = true;
+    const c = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0,0,c.width,c.height);
+    ctx.font = 0.2 * window.innerWidth + "Holtwood One SC";
+    ctx.fillText("GAME OVER", c.width/2, c.width/2);
+
+}
 
 function countdown() {
     let timer = document.getElementById("timer-id");
@@ -33,12 +38,11 @@ function countdown() {
     if(timeLeft == 0) {
         timer.innerHTML = 'Game Over';
         clearInterval(timeDown);
-        //endGame();
+        endGame();
     } else {
         timeLeft--;
         timer.innerHTML = timeLeft;
     }
-
 }, 1000);
 }
 
@@ -73,15 +77,19 @@ function drawCircle() {
         };
         console.log("click: (" + clickPos.x + "," + clickPos.y + ")");
         clickCircle(clickPos.x, clickPos.y, xCentre, yCentre, radius);
-        if (clickCircle(clickPos.x, clickPos.y, xCentre, yCentre, radius)) {
-            console.log('circle clicked');
-            canvas.removeEventListener('click', handleClick); // Remove event listener to prevent multiple clicks
-            score++;
-            displayScore.innerHTML = score;
-            nextTurn(); // Start the next round if less than a minute has passed
+        if (endGame.called) {
+            return;
         } else {
-            console.log('circle not clicked');
-        };
+            if (clickCircle(clickPos.x, clickPos.y, xCentre, yCentre, radius)) {
+                console.log('circle clicked');
+                canvas.removeEventListener('click', handleClick); // Remove event listener to prevent multiple clicks
+                score++;
+                displayScore.innerHTML = score;
+                nextTurn(); // Start the next round if less than a minute has passed
+            } else {
+                console.log('circle not clicked');
+            };
+        } 
     });
 };
 
