@@ -13,9 +13,13 @@
 <body>
     <header>
         <h1>R E A C T !</h1>
-        <button onclick="playGame();">play</button>
+        <div class="parent">
+            <button onclick="howToPlay();">How to Play</button>
+            <button onclick="playGame();">Play</button>
+            <button onclick="playGame();">Leaderboard</button>
+        </div>
     </header>
-    <div id="parent">
+    <div class="parent">
         <div id="scoreboard">
             <p>Score: <span id="score-id">0</span></p>
         </div>

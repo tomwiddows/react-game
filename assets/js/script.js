@@ -25,9 +25,9 @@ function endGame() {
     const c = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
     ctx.clearRect(0,0,c.width,c.height);
-    ctx.font = 0.2 * window.innerWidth + "Holtwood One SC";
-    ctx.fillText("GAME OVER", c.width/2, c.width/2);
-
+    ctx.font =  "bold 50px Holtwood One SC";
+    ctx.fillText("GAME", c.width/2 - 80, c.height/4);
+    ctx.fillText("OVER", c.width/2 - 80, c.height/3);
 }
 
 function countdown() {
@@ -36,7 +36,7 @@ function countdown() {
 
     var timeDown = setInterval(() => {
     if(timeLeft == 0) {
-        timer.innerHTML = 'Game Over';
+        timer.innerHTML = '30';
         clearInterval(timeDown);
         endGame();
     } else {
@@ -99,3 +99,14 @@ function clickCircle(xClick, yClick, xCircle, yCircle, radius) {
     return distance < radius;
 };
 
+function howToPlay() {
+    const c = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0,0,c.width,c.height);
+    ctx.font =  "18px Holtwood One SC";
+    ctx.fillStyle = "green";
+    ctx.fillText("The rules are simple:", 5, 23);
+    setTimeout(() => { ctx.fillText("click the green circle...", 5, 46); }, 2500);
+    setTimeout(() => { ctx.fillText("as many times as you can...", 5, 69); }, 5000);
+    setTimeout(() => { ctx.fillText("in 30 seconds!", 5, 92); }, 7500);
+}
