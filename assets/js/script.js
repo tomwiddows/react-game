@@ -14,20 +14,24 @@ resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
 function playGame() {
+    var playButton = document.getElementById("play-button");
     console.log(displayScore);
     displayScore.innerHTML = score;
     nextTurn();
     countdown();
+    playButton.disabled = true;
 }
 
 function endGame() {
+    var playButton = document.getElementById("play-button");
     endGame.called = true;
     const c = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
     ctx.clearRect(0,0,c.width,c.height);
     ctx.font =  "bold 50px Holtwood One SC";
-    ctx.fillText("GAME", c.width/2 - 80, c.height/4);
-    ctx.fillText("OVER", c.width/2 - 80, c.height/3);
+    ctx.fillText("GAME", c.width/2 - 90, c.height/4);
+    ctx.fillText("OVER", c.width/2 - 90, c.height/3);
+    playButton.disabled = false;
 }
 
 function countdown() {
@@ -110,3 +114,4 @@ function howToPlay() {
     setTimeout(() => { ctx.fillText("as many times as you can...", 5, 69); }, 5000);
     setTimeout(() => { ctx.fillText("in 30 seconds!", 5, 92); }, 7500);
 }
+
