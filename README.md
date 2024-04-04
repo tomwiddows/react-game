@@ -46,8 +46,11 @@ __Site Administrator__
 - The code should be well commented
 - The code should contain safeguards to prevent the user from breaking the game intentionally or unintiaonally
 
-## Wireframes
+### Wireframes
 
-<img src="/assets/images/image-1.png" height="300px"><img src="/assets/images/image-2.png" height="300px">
-![large screen wireframe](/assets/images/ image-1.png)![large screen wireframe](/assets/images/ image-1.png)
+<img src="/assets/images/image-1.png" height="300px">  <img src="/assets/images/image-2.png" height="300px">
+
+The colour scheme chosen for the canvas and background must contrast. I want the canvas to be brighter than the background. 
+There are three buttons required; How to play, play and leaderboard, which are arranged linearly and equally spread across the screen horizontally. Below these are the score counter and 30 second timer.
+The Canvas fills a large propoertion of the screen to maximise visibility and difficulty. 
 
