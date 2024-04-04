@@ -1,8 +1,11 @@
+# REACT! Game by Thomas Widdows
 
+https://tomwiddows.github.io/react-game/
+![ui.dev responsiveness test](../assets/images/image.png)
 
-# Website Goals
+## Website Goals
 
-## Customer Goals
+### Customer Goals
 
 - Have fun playing a competitive game
 - Be provided instructions on how to play
@@ -11,23 +14,23 @@
 - Have minimal number of clicks before game starts and between games
 - Continue to be challenged further to increase joy and reward
 
-## Business Goals
+### Business Goals
 
 - Create a fun and easy-to-play game
 - Use bright colours and large block text to emulate retro style arcade games
 - Make game more difficult over time to maximise user retention
 -
 
-# User Experience
+## User Experience
 
-## Potential Users
+### Potential Users
 
 - People looking for simple fun games on the internet
 - People trying to improve their reaction time
 - People studying JavaScript who want to learn from this code
 - Groups of friends/family that like competing against each other
 
-## User Stories
+### User Stories
 
 __New/Returning User__
 
@@ -42,3 +45,10 @@ __Site Administrator__
 - The page should be easily manageable
 - The code should be well commented
 - The code should contain safeguards to prevent the user from breaking the game intentionally or unintiaonally
+
+## Wireframes
+
+![alt text](../assets/images/image-1.png)
+![alt text](../assets/images/image-2.png)
+
+The wiref
