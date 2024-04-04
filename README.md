@@ -1,7 +1,7 @@
 # REACT! Game by Thomas Widdows
 
-https://tomwiddows.github.io/react-game/
-![ui.dev responsiveness test](../assets/images/image.png)
+https://tomwiddows.github.io/react-game/ <br>
+![am i responsive test](../assets/images/image.png)
 
 ## Website Goals
 
@@ -48,7 +48,7 @@ __Site Administrator__
 
 ## Wireframes
 
-![alt text](../assets/images/image-1.png)
-![alt text](../assets/images/image-2.png)
+![alt text](/assets/images/image-1.png)
+![alt text](/assets/images/image-2.png)
 
 The wiref
