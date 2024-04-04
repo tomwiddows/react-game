@@ -20,6 +20,7 @@ function playGame() {
     var leaderboardButton = document.getElementById("leaderboard-button");
     console.log(displayScore);
     displayScore.innerHTML = score;
+    document.getElementById("score-id").scrollIntoView();
     nextTurn();
     countdown();
     playButton.disabled = true;
@@ -139,11 +140,13 @@ function displayLeaderboard() {
     ctx.fillStyle = "green";
     ctx.fillText("Leaderboard", 5, 23);
 
-    let yOffset = 0;
+    leaderboard.sort((a, b) => b.Score - a.Score);
+
     for (let i = 0; i < leaderboard.length; i++) {
         const entry = leaderboard[i];
-        const text = `${entry.Name}: ${entry.Score}`;
-        ctx.fillText(text, 5, 23 * (i + 2) + yOffset);
-        yOffset += 20; // Increase vertical offset for the next entry
+        const playerName = entry.Name; // Get the player's name
+        const score = entry.Score; // Get the player's score
+        const text = `${playerName}: ${score}`;
+        ctx.fillText(text, 5, 23 * (i + 2));
     }
 }

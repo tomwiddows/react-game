@@ -1,3 +1,5 @@
+
+
 # Website Goals
 
 ## Customer Goals
@@ -34,9 +36,9 @@ __New/Returning User__
 - I want to have fun
 - I want to know who wins and/or my score
 - I want the site to look fun
-- 
 
 __Site Administrator__
 
 - The page should be easily manageable
 - The code should be well commented
+- The code should contain safeguards to prevent the user from breaking the game intentionally or unintiaonally
