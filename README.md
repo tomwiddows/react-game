@@ -48,6 +48,6 @@ __Site Administrator__
 
 ## Wireframes
 
-<img src="/assets/images/image-1.png" height="300px" style="display:inline-block;">
-<img src="/assets/images/image-2.png" height="300px" style="display:inline-block;">
+<img src="/assets/images/image-1.png" height="300px"><img src="/assets/images/image-2.png" height="300px">
+![large screen wireframe](/assets/images/ image-1.png)![large screen wireframe](/assets/images/ image-1.png)
 
