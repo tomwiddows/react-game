@@ -48,8 +48,6 @@ __Site Administrator__
 
 ## Wireframes
 
-<img src="/assets/images/image-1.png" height="300px">
-<img src="/assets/images/image-2.png" height="300px">
-![alt text](/assets/images/image-1.png)
-![alt text](/assets/images/image-2.png)
+<img src="/assets/images/image-1.png" height="300px" style="display: inline-flex">
+<img src="/assets/images/image-2.png" height="300px" style="display: inline-flex">
 
