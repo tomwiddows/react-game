@@ -1,4 +1,4 @@
-# REACT! Game by Thomas Widdows
+# REACT! Game by Tom Widdows
 
 https://tomwiddows.github.io/react-game/ <br><br>
 ![am i responsive test](/assets/images/amiresponsive.png)
@@ -90,15 +90,18 @@ __Leaderboard:__ Displays names and scores of games since last refresh from high
 
 ## Tools & Technologies used
 
-__HTML__ used for page structure.
-__CSS__ used for styling.
-__JavaScript__ used for interactivity.
-__Google Fonts__ used for styling text.
-__Favicon.ico__ used to design tab icon.
-__Git commands__ used for version control. (git add, git commit, git push)
-__GitHub__ used for secure online code storage.
-__GitPod__ used as a cloud IDE for development.
-__Pencil__ used for wireframes.
+- __HTML__ used for page structure.
+- __CSS__ used for styling.
+- __JavaScript__ used for interactivity.
+- __Google Fonts__ used for styling text.
+- __Favicon.ico__ used to design tab icon.
+- __Git commands__ used for version control. (git add, git commit, git push)
+- __GitHub__ used for secure online code storage.
+- __GitPod__ used as a cloud IDE for development.
+- __Pencil__ used for wireframes.
+- __W3C HTML Validator__
+- __W3 Jigsaw CSS Validator__
+- __JSHint Validator__
 
 ## Deployment
 
@@ -155,3 +158,9 @@ Comparing Local vs live deployment, there doesn't seem to be any differences in 
 |https://owumaro.github.io/text-stroke-generator/| Website for styling text with a solid outline using text-shadow rule|
 |https://www.w3schools.com/graphics/canvas_text.asp| Info on adding text to canvas|
 |https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView| Used to scroll to fit canvas at start of each game|
+
+## Acknowledgements
+
+- I would like to thank my Code Institute mentor, Sheryl Goldberg for supporting me through the multiple Slack Huddles leading up to the deadline. Sheryl helped a lot with early bug fixes.
+- I would like to thank my Code Institute tutor, Jessica for our weekly stand-up meetings
+- I would like to thank COde Institute as a whole for the opportunity to learn many useful skills and for providing a pathway into web development.
