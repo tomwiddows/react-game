@@ -58,6 +58,8 @@ The Canvas fills a large propoertion of the screen to maximise visibility and di
 
 <img src="/assets/images/play-feature.png" height="300px">
 
+__Holtwood One SC font:__ Chosen for its full capitalisation, strong serifs and bold, blocky nature. Reminiscent of arcade-style game fonts.
+
 __Change button text color on hover:__ Provides user with feedback - shows the element has a function.
 
 <img src="/assets/images/how-to-play.png" height="300px">
@@ -86,4 +88,18 @@ __Game over text:__ Displayed centrally within canvas after prompt is exited.
 
 __Leaderboard:__ Displays names and scores of games since last refresh from highest to lowest.
 
+## Tools & Technologies used
 
+__HTML__ used for page structure.
+__CSS__ used for styling.
+__JavaScript__ used for interactivity.
+__Google Fonts__ used for styling text.
+__Favicon.ico__ used to design tab icon.
+__Git commands__ used for version control. (git add, git commit, git push)
+__GitHub__ used for secure online code storage.
+__GitPod__ used as a cloud IDE for development.
+__Pencil__ used for wireframes.
+
+## Deployment
+
+This site was deployed to GitHub Pages.
