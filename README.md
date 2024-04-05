@@ -106,6 +106,7 @@ This site was deployed to GitHub Pages.
 
 ## Citations
 |Link|Use|
+|----|---|
 |https://lavrton.com/hit-region-detection-for-html5-canvas-and-how-to-listen-to-click-events-on-canvas-shapes-815034d7e9f8/| Provided soltution to clicking canvas region covered by circle at pos (x,y) of radius r|
 |https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect| Function to clear canvas|
 |https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect| Function to retreive element size data|
