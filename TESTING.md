@@ -15,6 +15,14 @@ For HTML validation, I used the the [CSS Jigsaw Validator](https://jigsaw.w3.org
 <img src="/assets/images/css-validation.png" height="300px">
 ![alt text](image.png)
 
+### JS
+
+FOr JavaScript validation, I used [JS Hint](https://jshint.com/):
+
+<img src="/assets/images/js-validation.png" height="300px">
+
+The feedback received states that the exponential operator (**) is only compatible with ES 7 and above. To prevent any working errors on older browser versions, I have altered my code to use the Math.pow() function instead.
+
 ### Lighthouse
 
 The lighthouse test analysed the page load and discovered no issues:

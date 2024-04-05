@@ -17,7 +17,7 @@ window.addEventListener('resize', resizeCanvas);
 /** Paints rules onto canvas.  */
 function howToPlay() {
     const c = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");
+    const ctx = c.getContext("2d");
     ctx.clearRect(0,0,c.width,c.height);
     ctx.font =  "18px Holtwood One SC";
     ctx.fillStyle = "green";
@@ -74,14 +74,12 @@ function nextTurn() {
  * If click is within circle area, add 1 to score and call nextTurn().
  * */
 function drawCircle() {
-    radius=25;
+    const radius=25;
     const c = document.getElementById("canvas");
     const ctx = c.getContext("2d");
-    cWidth = c.width;
-    cHeight = c.height;
     ctx.beginPath();
-    let xCentre = radius+(Math.floor(Math.random() * (cWidth-2*radius)));
-    let yCentre = radius+(Math.floor(Math.random() * (cHeight-2*radius)));
+    let xCentre = radius+(Math.floor(Math.random() * (c.width-2*radius)));
+    let yCentre = radius+(Math.floor(Math.random() * (c.height-2*radius)));
     console.log("circle: (" + xCentre + "," + yCentre + ")");
     ctx.arc(xCentre, yCentre, radius, 0, 2 * Math.PI);
     ctx.fillStyle = "green";
@@ -98,19 +96,19 @@ function drawCircle() {
         if (clickCircle(clickPos.x, clickPos.y, xCentre, yCentre, radius)) {
             console.log('circle clicked');
             // Remove event listener to prevent multiple clicks
-            canvas.removeEventListener('click', handleClick); 
+            c.removeEventListener('click', handleClick); 
             score++;
             displayScore.innerHTML = score;
             nextTurn();
         } else {
             console.log('circle not clicked');
-        };
+        }
     });
 }
 
 /** Calculates whether click was within area of circle */
 function clickCircle(xClick, yClick, xCircle, yCircle, radius) {
-    distance = Math.sqrt((xClick - xCircle) ** 2 + (yClick - yCircle) ** 2);
+    let distance = Math.sqrt(Math.pow((xClick - xCircle), 2) + Math.pow((yClick - yCircle), 2));
     console.log(distance);
     return distance < radius;
 }
@@ -126,7 +124,7 @@ function endGame() {
     let leaderboardButton = document.getElementById("leaderboard-button");
     endGame.called = true;
     const c = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");
+    const ctx = c.getContext("2d");
     ctx.clearRect(0,0,c.width,c.height);
     ctx.font =  "bold 50px Holtwood One SC";
     ctx.fillText("GAME", c.width/2 - 90, c.height/4);
