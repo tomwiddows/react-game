@@ -1,6 +1,6 @@
 # REACT! Game by Thomas Widdows
 
-https://tomwiddows.github.io/react-game/ <br>
+https://tomwiddows.github.io/react-game/ <br><br>
 ![am i responsive test](/assets/images/amiresponsive.png)
 
 ## Website Goals
