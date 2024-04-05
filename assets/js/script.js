@@ -1,23 +1,34 @@
-var score = 0;
-var displayScore = document.getElementById("score-id");
-var leaderboard = [];
+let score = 0;
+let displayScore = document.getElementById("score-id");
+let leaderboard = [];
 
 function resizeCanvas() {
     const canvas = document.getElementById('canvas');
     const container = document.getElementById('canvas_container');
     canvas.width = container.clientWidth;
     canvas.height = container.clientHeight;
-    console.log(canvas.width, canvas.height);
 }
 
 resizeCanvas();
 
 window.addEventListener('resize', resizeCanvas);
 
+function howToPlay() {
+    const c = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0,0,c.width,c.height);
+    ctx.font =  "18px Holtwood One SC";
+    ctx.fillStyle = "green";
+    ctx.fillText("The rules are simple:", 5, 23);
+    setTimeout(() => { ctx.fillText("click the green circle...", 5, 46); }, 2500);
+    setTimeout(() => { ctx.fillText("as many times as you can...", 5, 69); }, 5000);
+    setTimeout(() => { ctx.fillText("in 30 seconds!", 5, 92); }, 7500);
+}
+
 function playGame() {
-    var playButton = document.getElementById("play-button");
-    var howToPlayButton = document.getElementById("how-to-play-button");
-    var leaderboardButton = document.getElementById("leaderboard-button");
+    let playButton = document.getElementById("play-button");
+    let howToPlayButton = document.getElementById("how-to-play-button");
+    let leaderboardButton = document.getElementById("leaderboard-button");
     console.log(displayScore);
     displayScore.innerHTML = score;
     document.getElementById("score-id").scrollIntoView();
@@ -28,28 +39,11 @@ function playGame() {
     leaderboardButton.disabled = true;
 }
 
-function endGame() {
-    var playButton = document.getElementById("play-button");
-    var howToPlayButton = document.getElementById("how-to-play-button");
-    var leaderboardButton = document.getElementById("leaderboard-button");
-    endGame.called = true;
-    const c = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");
-    ctx.clearRect(0,0,c.width,c.height);
-    ctx.font =  "bold 50px Holtwood One SC";
-    ctx.fillText("GAME", c.width/2 - 90, c.height/4);
-    ctx.fillText("OVER", c.width/2 - 90, c.height/3);
-    playButton.disabled = false;
-    howToPlayButton.disabled = false;
-    leaderboardButton.disabled = false;
-    inputName();
-}
-
 function countdown() {
     let timer = document.getElementById("timer-id");
-    var timeLeft = 30;
+    let timeLeft = 30;
 
-    var timeDown = setInterval(() => {
+    let timeDown = setInterval(() => {
     if(timeLeft == 0) {
         timer.innerHTML = '30';
         clearInterval(timeDown);
@@ -74,8 +68,6 @@ function drawCircle() {
     const ctx = c.getContext("2d");
     cWidth = c.width;
     cHeight = c.height;
-    console.log(cWidth, cHeight);
-    ctx.clearRect(0,0,cWidth,cHeight);
     ctx.beginPath();
     let xCentre = radius+(Math.floor(Math.random() * (cWidth-2*radius)));
     let yCentre = radius+(Math.floor(Math.random() * (cHeight-2*radius)));
@@ -85,7 +77,7 @@ function drawCircle() {
     ctx.fill();
 
     c.addEventListener('click', function handleClick(e) {
-        var rect = e.target.getBoundingClientRect();
+        let rect = e.target.getBoundingClientRect();
         const clickPos = {
         x: e.clientX - rect.left,
         y: e.clientY - rect.top
@@ -110,16 +102,21 @@ function clickCircle(xClick, yClick, xCircle, yCircle, radius) {
     return distance < radius;
 }
 
-function howToPlay() {
+function endGame() {
+    let playButton = document.getElementById("play-button");
+    let howToPlayButton = document.getElementById("how-to-play-button");
+    let leaderboardButton = document.getElementById("leaderboard-button");
+    endGame.called = true;
     const c = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
     ctx.clearRect(0,0,c.width,c.height);
-    ctx.font =  "18px Holtwood One SC";
-    ctx.fillStyle = "green";
-    ctx.fillText("The rules are simple:", 5, 23);
-    setTimeout(() => { ctx.fillText("click the green circle...", 5, 46); }, 2500);
-    setTimeout(() => { ctx.fillText("as many times as you can...", 5, 69); }, 5000);
-    setTimeout(() => { ctx.fillText("in 30 seconds!", 5, 92); }, 7500);
+    ctx.font =  "bold 50px Holtwood One SC";
+    ctx.fillText("GAME", c.width/2 - 90, c.height/4);
+    ctx.fillText("OVER", c.width/2 - 90, c.height/3);
+    playButton.disabled = false;
+    howToPlayButton.disabled = false;
+    leaderboardButton.disabled = false;
+    inputName();
 }
 
 function inputName() {
